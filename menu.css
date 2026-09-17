@@ -1,0 +1,274 @@
+/* ============================================================
+   menu.css — CollabWeb · Menu Page
+   Monochrome · Editorial · Structured
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black:   #111111;
+  --ink:     #1d1d1f;
+  --body:    #3a3a3c;
+  --muted:   #6e6e73;
+  --subtle:  #aeaeb2;
+  --border:  #d2d2d7;
+  --bg:      #ffffff;
+  --bg-off:  #f5f5f7;
+  --bg-dim:  #e8e8ed;
+  --r:       12px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg-off);
+  color: var(--ink);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── NAVBAR ─────────────────────────────────────────────── */
+header {
+  position: sticky; top: 0; z-index: 200;
+  height: 52px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2.5rem;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+  font-size: 1.05rem; font-weight: 700;
+  letter-spacing: -0.3px; color: var(--black);
+}
+
+header nav { display: flex; gap: 4px; background: transparent; }
+header nav a {
+  font-size: 0.83rem; font-weight: 500;
+  color: var(--muted); text-decoration: none;
+  padding: 5px 12px; border-radius: 20px;
+  transition: background .15s, color .15s;
+}
+header nav a:hover { background: var(--bg-dim); color: var(--black); }
+header hr { display: none; }
+
+/* ─── PAGE TITLE BANNER ───────────────────────────────────── */
+.page-header {
+  background: var(--black);
+  padding: 3rem 2.5rem 2.5rem;
+  text-align: center;
+}
+
+/* emulate banner via first h2 */
+main > h2:first-of-type {
+  background: var(--black);
+  color: #fff;
+  text-align: center;
+  padding: 3rem 2rem 2.8rem;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  margin: 0;
+}
+
+main > p:first-of-type {
+  background: var(--black);
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 0 2rem 2rem;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ─── MAIN WRAPPER ───────────────────────────────────────── */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem 6rem;
+}
+
+/* inner content below banner */
+main > *:not(h2:first-of-type):not(p:first-of-type) {
+  margin-top: 0;
+}
+
+/* ─── TABLE ───────────────────────────────────────────────── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  margin: 2rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
+}
+
+thead { background: var(--bg-off); }
+
+th {
+  text-align: left;
+  padding: 0.75rem 1.1rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid var(--border);
+}
+
+td {
+  padding: 0.85rem 1.1rem;
+  border-bottom: 1px solid var(--bg-off);
+  color: var(--body);
+  vertical-align: middle;
+}
+
+tbody tr:nth-child(even) td { background: #fafafa; }
+tr:last-child td { border-bottom: none; }
+
+tbody tr {
+  transition: background .15s;
+}
+tbody tr:hover td { background: var(--bg-off); }
+
+td:first-child {
+  font-weight: 700;
+  color: var(--muted);
+  font-size: 0.8rem;
+  width: 40px;
+}
+
+/* Table link button */
+td a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--black);
+  background: var(--bg-off);
+  border: 1px solid var(--border);
+  padding: 4px 12px;
+  border-radius: 6px;
+  transition: background .15s, border-color .15s;
+}
+td a:hover {
+  background: var(--black);
+  color: #fff;
+  border-color: var(--black);
+}
+
+/* ─── SECTION HEADINGS ────────────────────────────────────── */
+main > h2:not(:first-of-type) {
+  background: none;
+  color: var(--black);
+  text-align: left;
+  padding: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  margin: 2.5rem 0 0.9rem;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--black);
+  margin: 2.2rem 0 0.6rem;
+  padding-left: 0.9rem;
+  border-left: 3px solid var(--black);
+  letter-spacing: -0.2px;
+}
+
+p {
+  font-size: 0.95rem;
+  color: var(--body);
+  margin-bottom: 0.7rem;
+}
+
+/* ─── TOPIC NAV LINKS ─────────────────────────────────────── */
+main > ul:first-of-type {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+main > ul:first-of-type li a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--black);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 5px 14px;
+  border-radius: 99px;
+  transition: background .15s, border-color .15s;
+}
+main > ul:first-of-type li a:hover {
+  background: var(--black);
+  color: #fff;
+  border-color: var(--black);
+}
+
+/* ─── CONTENT LISTS ───────────────────────────────────────── */
+ul, ol { padding-left: 1.4rem; }
+li { color: var(--body); margin-bottom: 0.4rem; font-size: 0.92rem; }
+li::marker { color: var(--subtle); }
+
+/* ─── CODE ────────────────────────────────────────────────── */
+code {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.8em;
+  background: var(--bg-dim);
+  border: 1px solid var(--border);
+  color: var(--ink);
+  padding: 0.15em 0.45em;
+  border-radius: 5px;
+}
+
+/* ─── HR ──────────────────────────────────────────────────── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+/* ─── LINKS ───────────────────────────────────────────────── */
+a {
+  color: var(--black);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--border);
+  font-weight: 500;
+  transition: text-decoration-color .2s;
+}
+a:hover { text-decoration-color: var(--black); }
+
+/* ─── FOOTER ─────────────────────────────────────────────── */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.78rem;
+  color: var(--subtle);
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+  letter-spacing: 0.01em;
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 600px) {
+  header { padding: 0 1rem; }
+  main { padding: 0 1rem 4rem; }
+  th, td { padding: 0.65rem 0.7rem; }
+  main > h2:first-of-type { padding: 2rem 1rem 1.8rem; }
+  main > p:first-of-type { padding: 0 1rem 1.5rem; }
+}

@@ -1,0 +1,195 @@
+/* ============================================================
+   main.css — CollabWeb · Home Page
+   Monochrome · Clean · Modern
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black:   #111111;
+  --ink:     #1d1d1f;
+  --body:    #3a3a3c;
+  --muted:   #6e6e73;
+  --subtle:  #aeaeb2;
+  --border:  #d2d2d7;
+  --bg:      #ffffff;
+  --bg-off:  #f5f5f7;
+  --bg-dim:  #e8e8ed;
+  --r:       14px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── NAVBAR ─────────────────────────────────────────────── */
+header {
+  position: sticky; top: 0; z-index: 200;
+  height: 52px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2.5rem;
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--black);
+}
+
+header nav { display: flex; gap: 4px; background: transparent; }
+header nav a {
+  font-size: 0.83rem; font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 5px 12px;
+  border-radius: 20px;
+  transition: background .15s, color .15s;
+}
+header nav a:hover { background: var(--bg-off); color: var(--black); }
+header hr { display: none; }
+
+/* ─── HERO ────────────────────────────────────────────────── */
+#home {
+  background: var(--bg-off);
+  border-bottom: 1px solid var(--border);
+  padding: 80px 2rem 70px;
+  text-align: center;
+}
+
+#home h2 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+
+#home p {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 500px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+#home hr { display: none; }
+
+/* ─── MAIN WRAPPER ───────────────────────────────────────── */
+main { max-width: 900px; margin: 0 auto; padding: 0 1.5rem 6rem; }
+
+/* ─── HERO IMAGE ─────────────────────────────────────────── */
+main > img {
+  display: block;
+  width: min(520px, 100%);
+  margin: 3.5rem auto;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.04),
+    0 12px 40px rgba(0,0,0,0.10);
+  transition: box-shadow .3s, transform .3s;
+}
+main > img:hover {
+  transform: translateY(-4px) scale(1.005);
+  box-shadow:
+    0 4px 8px rgba(0,0,0,0.06),
+    0 20px 60px rgba(0,0,0,0.14);
+}
+
+/* ─── SECTIONS ───────────────────────────────────────────── */
+section {
+  margin-bottom: 2rem;
+  padding: 2rem 2.2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  background: var(--bg);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.05);
+  transition: box-shadow .25s, transform .25s;
+}
+section:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 8px 28px rgba(0,0,0,0.09);
+  transform: translateY(-2px);
+}
+
+section h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--black);
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--bg-dim);
+}
+
+section p { color: var(--body); font-size: 0.95rem; }
+section hr { display: none; }
+
+/* ─── LISTS ───────────────────────────────────────────────── */
+ul, ol { padding-left: 1.4rem; }
+li { color: var(--body); margin-bottom: 0.4rem; font-size: 0.95rem; }
+
+/* ─── LINKS ───────────────────────────────────────────────── */
+a {
+  color: var(--black);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--border);
+  font-weight: 500;
+  transition: text-decoration-color .2s;
+}
+a:hover { text-decoration-color: var(--black); }
+
+/* Anggota pill links */
+#anggota ol { list-style: none; padding: 0; display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.4rem; }
+#anggota ol li a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.35rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: 99px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--black);
+  background: var(--bg-off);
+  transition: background .2s, border-color .2s, transform .2s;
+}
+#anggota ol li a:hover {
+  background: var(--black);
+  color: #fff;
+  border-color: var(--black);
+  transform: translateY(-2px);
+}
+
+/* ─── FOOTER ─────────────────────────────────────────────── */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.78rem;
+  color: var(--subtle);
+  border-top: 1px solid var(--border);
+  background: var(--bg-off);
+  letter-spacing: 0.01em;
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 600px) {
+  header { padding: 0 1rem; }
+  header nav a { padding: 5px 8px; }
+  #home { padding: 50px 1.2rem 45px; }
+  section { padding: 1.4rem; }
+  main { padding: 0 1rem 4rem; }
+}
