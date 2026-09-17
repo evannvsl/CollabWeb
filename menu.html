@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu — GitKelompok</title>
+</head>
+<body>
+
+  <header>
+    <h1>Menu Page</h1>
+    <nav>
+      <a href="main.html">Beranda</a> |
+      <a href="menu.html">Menu</a> |
+      <a href="kontak.html">Kontak</a>
+    </nav>
+    <hr />
+  </header>
+
+  <main>
+
+    <h2>Daftar Menu</h2>
+    <p>Berikut adalah halaman-halaman yang tersedia di website ini.</p>
+
+    <table border="1" cellpadding="8" cellspacing="0">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama Halaman</th>
+          <th>Deskripsi</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Beranda</td>
+          <td>Halaman utama berisi informasi proyek dan anggota kelompok.</td>
+          <td><a href="main.html">Buka</a></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Menu</td>
+          <td>Daftar seluruh halaman yang ada di website ini.</td>
+          <td><a href="menu.html">Buka</a></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Kontak</td>
+          <td>Formulir dan informasi kontak anggota kelompok.</td>
+          <td><a href="kontak.html">Buka</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br />
+
+    <h2>Topik yang Dipelajari</h2>
+    <ul>
+      <li><a href="#git">Git Dasar</a></li>
+      <li><a href="#github">GitHub</a></li>
+      <li><a href="#branch">Branching &amp; Merging</a></li>
+      <li><a href="#pr">Pull Request</a></li>
+    </ul>
+
+    <hr />
+
+    <h3 id="git">Git Dasar</h3>
+    <p>Git adalah sistem version control terdistribusi yang digunakan untuk melacak perubahan kode sumber.</p>
+    <ul>
+      <li><code>git init</code> — Inisialisasi repositori baru</li>
+      <li><code>git add</code> — Menambahkan file ke staging area</li>
+      <li><code>git commit</code> — Menyimpan perubahan ke repositori</li>
+      <li><code>git log</code> — Melihat riwayat commit</li>
+    </ul>
+
+    <h3 id="github">GitHub</h3>
+    <p>GitHub adalah platform hosting repositori Git berbasis cloud yang memudahkan kolaborasi tim.</p>
+    <ul>
+      <li>Membuat dan mengelola repositori online</li>
+      <li>Mengundang kolaborator</li>
+      <li>Melacak isu (<i>issues</i>)</li>
+    </ul>
+
+    <h3 id="branch">Branching &amp; Merging</h3>
+    <p>Branching memungkinkan pengembangan fitur secara paralel tanpa mengganggu kode utama.</p>
+    <ul>
+      <li><code>git branch nama-branch</code> — Membuat branch baru</li>
+      <li><code>git checkout nama-branch</code> — Berpindah ke branch</li>
+      <li><code>git merge nama-branch</code> — Menggabungkan branch</li>
+    </ul>
+
+    <h3 id="pr">Pull Request</h3>
+    <p>Pull Request adalah mekanisme untuk mengajukan perubahan kode agar ditinjau sebelum digabung ke branch utama.</p>
+    <ul>
+      <li>Buat branch baru dan lakukan commit</li>
+      <li>Push ke GitHub</li>
+      <li>Buka Pull Request dari GitHub</li>
+      <li>Minta review dari anggota lain</li>
+      <li>Merge setelah disetujui</li>
+    </ul>
+
+  </main>
+
+  <hr />
+  <footer>
+    <p>&copy; 2026 GitKelompok &mdash; Tugas Pemrograman Web</p>
+  </footer>
+
+</body>
+</html>
