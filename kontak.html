@@ -20,59 +20,96 @@
 
   <main>
 
-    <h2>Kontak Kami</h2>
-    <p>Silakan hubungi kami melalui formulir di bawah atau lihat informasi kontak masing-masing anggota kelompok.</p>
+    <h2>Hubungi Kami</h2>
+    <p>hubungi kami dan lakukan reservasi untuk layanan barber kami.</p>
 
     <hr />
 
-    <h3>Formulir Pesan</h3>
+    <h3>Formulir Reservasi</h3>
     <form action="#" method="post">
 
-      <label for="nama">Nama Lengkap:</label><br />
-      <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" size="35" required />
-      <br /><br />
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required />
+        </div>
 
-      <label for="email">Email:</label><br />
-      <input type="email" id="email" name="email" placeholder="contoh@email.com" size="35" required />
-      <br /><br />
+        <div class="form-field">
+          <label for="telepon">Nomor Telepon</label>
+          <input type="tel" id="telepon" name="telepon" placeholder="08xxxxxxxxxx" required />
+        </div>
 
-      <label for="subjek">Subjek:</label><br />
-      <input type="text" id="subjek" name="subjek" placeholder="Subjek pesan" size="35" />
-      <br /><br />
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="contoh@email.com" required />
+        </div>
 
-      <label for="pesan">Pesan:</label><br />
-      <textarea id="pesan" name="pesan" rows="6" cols="40" placeholder="Tulis pesan Anda di sini..." required></textarea>
-      <br /><br />
+        <div class="form-field">
+          <label for="layanan">Pilih Layanan</label>
+          <select id="layanan" name="layanan" required>
+            <option value="" selected disabled>Pilih layanan barber</option>
+            <option value="haircut">Haircut</option>
+            <option value="haircut-beard">Haircut + Beard</option>
+            <option value="beard-trim">Beard Trim</option>
+            <option value="kids-haircut">Kids Haircut</option>
+          </select>
+        </div>
 
-      <input type="submit" value="Kirim Pesan" />
+        <div class="form-field">
+          <label for="barber">Pilih Barber</label>
+          <select id="barber" name="barber" required>
+            <option value="" selected disabled>Pilih barber</option>
+            <option value="bebas">Barber tersedia</option>
+            <option value="barber-1">Barber 1</option>
+            <option value="barber-2">Barber 2</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="tanggal">Tanggal Reservasi</label>
+          <input type="date" id="tanggal" name="tanggal" required />
+        </div>
+
+        <div class="form-field">
+          <label for="waktu">Waktu Reservasi</label>
+          <input type="time" id="waktu" name="waktu" min="09:00" max="21:00" required />
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="catatan">Catatan Tambahan</label>
+        <textarea id="catatan" name="catatan" rows="4" placeholder="Contoh: ingin model rambut tertentu..."></textarea>
+      </div>
+
+      <input type="submit" value="Buat Reservasi" />
       <input type="reset" value="Reset" />
 
     </form>
 
     <hr />
 
-    <h3>Informasi Anggota Kelompok</h3>
+    <h3>Owner &amp; Founder</h3>
     <table border="1" cellpadding="8" cellspacing="0">
       <thead>
         <tr>
           <th>No</th>
           <th>Nama</th>
-          <th>Email</th>
-          <th>GitHub</th>
+          <th>Jabatan</th>
+          <th>Kontak</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>1</td>
-          <td><a href="evan.html">Evan</a></td>
+          <td>Evan</td>
+          <td>Founder &amp; Head Barber</td>
           <td>evangalangwry11@email.com</td>
-          <td><a href="https://github.com/evannvsl">github.com/evannvsl</a></td>
         </tr>
         <tr>
           <td>2</td>
-          <td><a href="fairus.html">Fairus</a></td>
-          <td>fairus@email.com</td>
-          <td><a href="https://github.com/fairuz33">github.com/fairuz33</a></td>
+          <td>Fairus</td>
+          <td>Co-Founder &amp; Operations Manager</td>
+          <td>fairuzrasidin33@email.com</td>
         </tr>
       </tbody>
     </table>
@@ -80,11 +117,10 @@
     <hr />
 
     <h3>About Us</h3>
-    <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border: 1px solid #ddd; display: grid; grid-template-columns: 130px 10px auto; gap: 6px; align-items: center;">
-      <b>Institusi</b> <span>:</span> <span>Universitas Sultan Ageng Tirtayasa</span>
-      <b>Program Studi</b> <span>:</span> <span>Teknik Informatika</span>
-      <b>Mata Kuliah</b> <span>:</span> <span>Pemrograman Web</span>
-      <b>Semester</b> <span>:</span> <span>Ganjil 2026/2027</span>
+    <div class="about-us">
+      <p><strong>Collab Barber Shop</strong> adalah tempat bagi orang untuk mencari kepercayaan setelah mencoba barber lain. disini kita menghadirkan pengalaman terbaik, rapi, nyaman, dan yang terpenting kepercayaan untuk setiap pelanggan.</p>
+      <p>Dengan barber berpengalaman, peralatan higienis, dan konsultasi gaya sebelum layanan dimulai, kami membantu Anda mendapatkan penampilan terbaik yang sesuai dengan karakter dan kebutuhan Anda.</p>
+      <p>Kami melayani meski permintaanya aneh-aneh<strong> mulai dari Haircut, Haircut & Beard, Beard Trim,</strong> dan <strong>Kids Haircut</strong> dalam suasana yang santai dan profesional. Kepuasan pelanggan, kualitas hasil, dan pelayanan yang konsisten adalah komitmen utama kami.</p>
     </div>
 
   </main>
