@@ -2,13 +2,13 @@
 # Pemrograman Web | Kelas C
 
 **Anggota & Nim**
-- Evan Galang Wiryanto (@evannvsl) 3337250146
-- Fairus (@fairuz33)               3337250152
+- Evan Galang Wiryanto | 3337250146 | (@evannvsl)
+- Fairus Rasidin | 3337250152 | (@fairuz33)               
 
 **Pembagian Tugas**
+- Bersama → Halaman Utama (`main.html`)
 - Evan → Menu (`menu.html`)
 - Fairus → Kontak (`kontak.html`)
-- Bersama → Halaman Utama (`main.html`)
 
 **Branch**
 - `main`
