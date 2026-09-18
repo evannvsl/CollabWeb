@@ -3,109 +3,228 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CollabWeb</title>
+  <title>WeBarber</title>
   <link rel="stylesheet" href="menu.css" />
 </head>
 <body>
 
   <header>
-    <h1>CollabWeb</h1>
+    <h1>WeBarber</h1>
     <nav>
-      <a href="main.html">Home</a> |
-      <a href="menu.html">Menu</a> |
-      <a href="kontak.html">Kontak</a>
+      <a href="main.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="kontak.html">Contact</a>
     </nav>
     <hr />
   </header>
 
   <main>
 
-    <h2>Daftar Menu</h2>
-    <p>Berikut adalah halaman-halaman yang tersedia di website ini.</p>
+    <section class="banner">
+      <p class="banner-label">Our Services</p>
+      <h2 class="banner-title">Grooming, Redefined.</h2>
+      <p class="banner-sub">Every cut tells a story. We make sure yours is worth telling.</p>
+    </section>
 
-    <table border="1" cellpadding="8" cellspacing="0">
-      <thead>
-        <tr>
-          <th>No</th>
-          <th>Nama Halaman</th>
-          <th>Deskripsi</th>
-          <th>Link</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Beranda</td>
-          <td>Halaman utama berisi informasi proyek dan anggota kelompok.</td>
-          <td><a href="main.html">Buka</a></td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Menu</td>
-          <td>Daftar seluruh halaman yang ada di website ini.</td>
-          <td><a href="menu.html">Buka</a></td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Kontak</td>
-          <td>Formulir dan informasi kontak anggota kelompok.</td>
-          <td><a href="kontak.html">Buka</a></td>
-        </tr>
-      </tbody>
-    </table>
+    <section class="menu-section">
+      <p class="section-label">Services</p>
+      <h3 class="section-title">Haircut &amp; Styling</h3>
+      <div class="service-grid">
 
-    <br />
+        <div class="service-card">
+          <div class="service-top">
+            <span class="service-name">Signature Cut</span>
+            <span class="service-price">Rp 75.000</span>
+          </div>
+          <p class="service-desc">Precision haircut by our senior barber. Includes style consultation and finishing spray.</p>
+          <span class="service-duration">± 45 min</span>
+        </div>
 
-    <h2>Topik yang Dipelajari</h2>
-    <ul>
-      <li><a href="#git">Git Dasar</a></li>
-      <li><a href="#github">GitHub</a></li>
-      <li><a href="#branch">Branching &amp; Merging</a></li>
-      <li><a href="#pr">Pull Request</a></li>
-    </ul>
+        <div class="service-card">
+          <div class="service-top">
+            <span class="service-name">Classic Fade</span>
+            <span class="service-price">Rp 65.000</span>
+          </div>
+          <p class="service-desc">Clean fade from skin to the top of the head. Suitable for both formal and casual appearances.</p>
+          <span class="service-duration">± 40 min</span>
+        </div>
 
-    <hr />
+        <div class="service-card">
+          <div class="service-top">
+            <span class="service-name">Textured Crop</span>
+            <span class="service-price">Rp 70.000</span>
+          </div>
+          <p class="service-desc">Modern cutting technique with texture on the top. Suitable for both thick and thin hair.</p>
+          <span class="service-duration">± 45 min</span>
+        </div>
 
-    <h3 id="git">Git Dasar</h3>
-    <p>Git adalah sistem version control terdistribusi yang digunakan untuk melacak perubahan kode sumber.</p>
-    <ul>
-      <li><code>git init</code> — Inisialisasi repositori baru</li>
-      <li><code>git add</code> — Menambahkan file ke staging area</li>
-      <li><code>git commit</code> — Menyimpan perubahan ke repositori</li>
-      <li><code>git log</code> — Melihat riwayat commit</li>
-    </ul>
+        <div class="service-card">
+          <div class="service-top">
+            <span class="service-name">Undercut</span>
+            <span class="service-price">Rp 60.000</span>
+          </div>
+          <p class="service-desc">Clean trim on the sides and back, leaving the top longer. Bold &amp; confident look.</p>
+          <span class="service-duration">± 35 min</span>
+        </div>
 
-    <h3 id="github">GitHub</h3>
-    <p>GitHub adalah platform hosting repositori Git berbasis cloud yang memudahkan kolaborasi tim.</p>
-    <ul>
-      <li>Membuat dan mengelola repositori online</li>
-      <li>Mengundang kolaborator</li>
-      <li>Melacak isu (<i>issues</i>)</li>
-    </ul>
+        <div class="service-card">
+          <div class="service-top">
+            <span class="service-name">Crew Cut</span>
+            <span class="service-price">Rp 55.000</span>
+          </div>
+          <p class="service-desc">Classic short cut with a neat profile. Easy to maintain, always looks clean.</p>
+          <span class="service-duration">± 30 min</span>
+        </div>
 
-    <h3 id="branch">Branching &amp; Merging</h3>
-    <p>Branching memungkinkan pengembangan fitur secara paralel tanpa mengganggu kode utama.</p>
-    <ul>
-      <li><code>git branch nama-branch</code> — Membuat branch baru</li>
-      <li><code>git checkout nama-branch</code> — Berpindah ke branch</li>
-      <li><code>git merge nama-branch</code> — Menggabungkan branch</li>
-    </ul>
+        <div class="service-card service-card--highlight">
+          <div class="service-top">
+            <span class="service-name">Full Restyle</span>
+            <span class="service-price">Rp 120.000</span>
+          </div>
+          <p class="service-desc">Deep consultation + total hair style transformation. For a completely new look.</p>
+          <span class="service-duration">± 75 min</span>
+          <span class="service-badge">Most Popular</span>
+        </div>
+      </div>
+    </section>
 
-    <h3 id="pr">Pull Request</h3>
-    <p>Pull Request adalah mekanisme untuk mengajukan perubahan kode agar ditinjau sebelum digabung ke branch utama.</p>
-    <ul>
-      <li>Buat branch baru dan lakukan commit</li>
-      <li>Push ke GitHub</li>
-      <li>Buka Pull Request dari GitHub</li>
-      <li>Minta review dari anggota lain</li>
-      <li>Merge setelah disetujui</li>
-    </ul>
+    <section class="menu-section">
+      <p class="section-label">Beard</p>
+      <h3 class="section-title">Beard &amp; Shave</h3>
+      <div class="service-grid">
+
+        <div class="service-card">
+          <div class="service-top">
+            <span class="service-name">Beard Trim</span>
+            <span class="service-price">Rp 40.000</span>
+          </div>
+          <p class="service-desc">Refine the shape of your beard with a razor and scissors. Includes sharp line definition.</p>
+          <span class="service-duration">± 20 min</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-top">
+            <span class="service-name">Hot Towel Shave</span>
+            <span class="service-price">Rp 55.000</span>
+          </div>
+          <p class="service-desc">Classic shaving tradition with hot towels, premium shaving cream, and a straight razor.</p>
+          <span class="service-duration">± 30 min</span>
+        </div>
+
+        <div class="service-card service-card--highlight">
+          <div class="service-top">
+            <span class="service-name">Cut + Beard Combo</span>
+            <span class="service-price">Rp 105.000</span>
+          </div>
+          <p class="service-desc">Precision haircut by our senior barber combined with a beard trim. The ultimate grooming package.</p>
+          <span class="service-duration">± 60 min</span>
+          <span class="service-badge">Best Value</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="menu-section">
+      <p class="section-label">Treatment</p>
+      <h3 class="section-title">Hair &amp; Scalp Treatment</h3>
+      <div class="service-grid">
+
+        <div class="service-card">
+          <div class="service-top">
+            <span class="service-name">Hair Wash &amp; Blow</span>
+            <span class="service-price">Rp 35.000</span>
+          </div>
+          <p class="service-desc">Premium shampoo wash + blow dry styling. The perfect add-on after a haircut.</p>
+          <span class="service-duration">± 20 min</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-top">
+            <span class="service-name">Scalp Massage</span>
+            <span class="service-price">Rp 45.000</span>
+          </div>
+          <p class="service-desc">15-minute scalp massage with essential oils. Total relaxation, improved circulation.</p>
+          <span class="service-duration">± 15 min</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-top">
+            <span class="service-name">Hair Coloring</span>
+            <span class="service-price">Rp 150.000+</span>
+          </div>
+          <p class="service-desc">Professional hair coloring with quality products. Price varies based on length and color type.</p>
+          <span class="service-duration">± 90 min</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-top">
+            <span class="service-name">Pomade Styling</span>
+            <span class="service-price">Rp 25.000</span>
+          </div>
+          <p class="service-desc">Finishing with chosen pomade or wax according to hair style. Results last all day.</p>
+          <span class="service-duration">± 10 min</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="menu-section">
+      <p class="section-label">Schedule</p>
+      <h3 class="section-title">Operating Hours</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Opening Time</th>
+            <th>Closing Time</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monday – Friday</td>
+            <td>09.00 AM</td>
+            <td>21.00 PM</td>
+            <td><span class="status status--open">Open</span></td>
+          </tr>
+          <tr>
+            <td>Saturday</td>
+            <td>08.00 AM</td>
+            <td>22.00 PM</td>
+            <td><span class="status status--open">Open</span></td>
+          </tr>
+          <tr>
+            <td>Sunday</td>
+            <td>09.00 AM</td>
+            <td>20.00 PM</td>
+            <td><span class="status status--open">Open</span></td>
+          </tr>
+          <tr>
+            <td>National Holidays</td>
+            <td>—</td>
+            <td>—</td>
+            <td><span class="status status--closed">Closed</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="menu-section">
+      <p class="section-label">Information</p>
+      <h3 class="section-title">Terms & Conditions</h3>
+      <ul class="policy-list">
+        <li>Walk-in available, but reservations are recommended to avoid waiting.</li>
+        <li>Cancellation of reservations should be done at least 1 hour before the scheduled time.</li>
+        <li>Prices may change at any time, please confirm at the time of reservation.</li>
+        <li>We use premium care products free from parabens.</li>
+        <li>Customer satisfaction is our priority — not satisfied? We'll fix it at no extra cost.</li>
+      </ul>
+    </section>
 
   </main>
 
-  <hr />
   <footer>
-    <p>&copy; 2026 GitKelompokTugas Pemrograman Web</p>
+    <p>&copy; WeBarber</p>
   </footer>
 
 </body>
