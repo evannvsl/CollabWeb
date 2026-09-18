@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CollabWeb</title>
+  <title>WeBarber</title>
   <link rel="stylesheet" href="main.css" />
 </head>
 <body>
 
   <header>
-    <h1>CollabWeb</h1>
+    <h1>WeBarber</h1>
     <nav>
-      <a href="main.html">Home</a> |
-      <a href="menu.html">Menu</a> |
-      <a href="kontak.html">Kontak</a>
+      <a href="main.html">Home</a> 
+      <a href="menu.html">Menu</a> 
+      <a href="kontak.html">Contact</a>
     </nav>
     <hr />
   </header>
@@ -21,39 +21,100 @@
   <main>
 
     <section id="home">
-      <h2>Welcome to CollabWeb</h2>
-      <p>
-        Website kelompok untuk tugas Pemrograman Web menggunakan Git dan GitHub
-        sebagai alat kolaborasi antar anggota.
+      <h2>Welcome to WeBarber</h2>
+      <p>Our barbershop is dedicated to providing top-notch grooming services with a touch of style and precision. Whether you're looking for a classic cut or a modern look, our skilled barbers are here to make you look your best.
       </p>
       <hr />
     </section>
 
-    <img src="img/besokaja.jpeg">
+    <section id="gallery">
+      <h2 class="gallery-title">Crafted with Precision</h2>
+      <p class="gallery-label">Our Work</p>
+      <div class="gallery-grid">
+        <div class="gallery-item gallery-featured">
+          <img src="img/img7.avif" alt="Featured Cut" />
+          <div class="gallery-overlay"><span>Signature Cut</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/img1.jpg" alt="Barbershop Style 1" />
+          <div class="gallery-overlay"><span>Classic Fade</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/img2.jpg" alt="Barbershop Style 2" />
+          <div class="gallery-overlay"><span>Crew Cut</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/img3.jpg" alt="Barbershop Style 3" />
+          <div class="gallery-overlay"><span>Textured Top</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/img4.jpg" alt="Barbershop Style 4" />
+          <div class="gallery-overlay"><span>Undercut</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/img5.jpg" alt="Barbershop Style 5" />
+          <div class="gallery-overlay"><span>Beard Trim</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/img6.jpeg" alt="Barbershop Style 6" />
+          <div class="gallery-overlay"><span>Mode on aktif</span></div>
+        </div>
+      </div>
+    </section>
+
 
     <section id="menu">
-      <h2>Explore The Menu</h2>
-      <ul>
-        <li><a href="menu.html">Menu</a> — Daftar halaman dan topik yang dipelajari</li>
-        <li><a href="kontak.html">Kontak</a> — Formulir pesan dan info anggota</li>
-      </ul>
-      <hr />
+      <p class="section-eyebrow">What We Offer</p>
+      <h2 class="section-heading">Our Services</h2>
+      <div class="menu-cards">
+        <a href="menu.html" class="menu-card menu-card--dark">
+          <span class="menu-card-label">Haircut &amp; Styling</span>
+          <span class="menu-card-title">Premium Cuts</span>
+          <span class="menu-card-desc">Signature, Fade, Undercut &amp; more</span>
+          <span class="menu-card-arrow">→</span>
+        </a>
+        <a href="menu.html" class="menu-card">
+          <span class="menu-card-label">Beard</span>
+          <span class="menu-card-title">Beard &amp; Shave</span>
+          <span class="menu-card-desc">Trim, Hot Towel &amp; Combo package</span>
+          <span class="menu-card-arrow">→</span>
+        </a>
+        <a href="menu.html" class="menu-card">
+          <span class="menu-card-label">Treatment</span>
+          <span class="menu-card-title">Hair Care</span>
+          <span class="menu-card-desc">Scalp massage, coloring &amp; styling</span>
+          <span class="menu-card-arrow">→</span>
+        </a>
+      </div>
+      <a href="menu.html" class="menu-cta">View Full Menu &amp; Pricing →</a>
     </section>
 
     <section id="anggota">
-      <h2>Anggota Kelompok</h2>
-      <p>Klik nama anggota untuk melihat profil lengkap:</p>
-      <ol>
-        <li><a href="evan.html">Evan</a></li>
-        <li><a href="fairus.html">Fairus</a></li>
-      </ol>
-      <hr />
+      <h2 class="section-heading">Our Teams</h2>
+      <div class="team-grid">
+        <a href="kontak.html" class="team-card">
+          <div class="team-avatar">E</div>
+          <div class="team-info">
+            <span class="team-name">Evan</span>
+            <span class="team-role">Founder & Head Barber</span>
+          </div>
+          <span class="team-arrow">→</span>
+        </a>
+        <a href="kontak.html" class="team-card">
+          <div class="team-avatar">F</div>
+          <div class="team-info">
+            <span class="team-name">Fairus</span>
+            <span class="team-role">Co-Founder & Operations Manager</span>
+          </div>
+          <span class="team-arrow">→</span>
+        </a>
+      </div>
     </section>
 
   </main>
 
   <footer>
-    <p>&copy; 2026 CollabWeb &mdash; Tugas Pemrograman Web</p>
+    <p>&copy; WeBarber</p>
   </footer>
 
 </body>
