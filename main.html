@@ -4,116 +4,211 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WeBarber</title>
-  <link rel="stylesheet" href="main.css" />
-</head>
-<body>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; }
 
-  <header>
-    <h1>WeBarber</h1>
-    <nav>
-      <a href="main.html">Home</a> |
-      <a href="menu.html">Menu</a> |
-      <a href="kontak.html">Contact</a>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 1.2rem;
+    }
+    .gallery-featured { grid-column: 1 / 3; grid-row: 1; aspect-ratio: 16/9; }
+    .gallery-grid > div:nth-child(2) { grid-column: 3; grid-row: 1; }
+    .gallery-grid > div:nth-child(3) { grid-column: 4; grid-row: 1; }
+    .gallery-grid > div:nth-child(4) { grid-column: 1; grid-row: 2; }
+    .gallery-grid > div:nth-child(5) { grid-column: 2; grid-row: 2; }
+    .gallery-grid > div:nth-child(6) { grid-column: 3; grid-row: 2; }
+    .gallery-grid > div:nth-child(7) { grid-column: 4; grid-row: 2; }
+
+    .gallery-item img { filter: grayscale(15%); }
+    .gallery-item:hover img { transform: scale(1.06); filter: grayscale(0%); }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay {
+      background: linear-gradient(to top, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0) 55%);
+    }
+
+    .menu-card:hover .menu-card-arrow { transform: translateX(4px); }
+    .team-card:hover .team-arrow      { transform: translateX(4px); }
+
+    @media (max-width: 768px) {
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .gallery-featured { grid-column: 1 / 3; grid-row: 1; }
+      .gallery-grid > div:nth-child(2) { grid-column: 3; grid-row: 1; }
+      .gallery-grid > div:nth-child(3) { grid-column: 1; grid-row: 2; }
+      .gallery-grid > div:nth-child(4) { grid-column: 2; grid-row: 2; }
+      .gallery-grid > div:nth-child(5) { grid-column: 3; grid-row: 2; }
+      .gallery-grid > div:nth-child(6) { grid-column: 1; grid-row: 3; }
+      .gallery-grid > div:nth-child(7) { grid-column: 2; grid-row: 3; }
+    }
+
+    @media (max-width: 600px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .gallery-featured { grid-column: 1 / 3; grid-row: 1; aspect-ratio: 16/9; }
+      .gallery-grid > div:nth-child(2) { grid-column: 1; grid-row: 2; }
+      .gallery-grid > div:nth-child(3) { grid-column: 2; grid-row: 2; }
+      .gallery-grid > div:nth-child(4) { grid-column: 1; grid-row: 3; }
+      .gallery-grid > div:nth-child(5) { grid-column: 2; grid-row: 3; }
+      .gallery-grid > div:nth-child(6) { grid-column: 1; grid-row: 4; }
+      .gallery-grid > div:nth-child(7) { grid-column: 2; grid-row: 4; }
+      .gallery-overlay { opacity: 1; }
+    }
+  </style>
+</head>
+<body class="font-sans bg-white text-[#1d1d1f] leading-relaxed">
+
+  <!-- nav -->
+  <header class="sticky top-0 z-50 h-[52px] flex items-center justify-between px-10 bg-white/80 backdrop-blur-xl backdrop-saturate-200 border-b border-[#d2d2d7]">
+    <h1 class="text-[1.05rem] font-bold tracking-tight text-[#111111]">WeBarber</h1>
+    <nav class="flex gap-1">
+      <a href="main.html"   class="text-[0.83rem] font-medium text-[#6e6e73] no-underline px-3 py-1 rounded-full transition-colors hover:bg-[#f5f5f7] hover:text-[#111111]">Home</a>|
+      <a href="menu.html"   class="text-[0.83rem] font-medium text-[#6e6e73] no-underline px-3 py-1 rounded-full transition-colors hover:bg-[#f5f5f7] hover:text-[#111111]">Menu</a>|
+      <a href="kontak.html" class="text-[0.83rem] font-medium text-[#6e6e73] no-underline px-3 py-1 rounded-full transition-colors hover:bg-[#f5f5f7] hover:text-[#111111]">Contact</a>
     </nav>
-    <hr />
   </header>
 
-  <main>
+  <section id="home" class="bg-[#f5f5f7] border-b border-[#d2d2d7] py-20 px-8 text-center">
+    <h2 class="text-[clamp(2.2rem,5vw,3.6rem)] font-extrabold tracking-[-1.5px] leading-none text-[#111111] mb-4">Welcome to WeBarber</h2>
+    <p class="text-[1.1rem] text-[#6e6e73] max-w-[500px] mx-auto font-normal">
+      Our barbershop is dedicated to providing top-notch grooming services with a touch of style and precision. Whether you're looking for a classic cut or a modern look, our skilled barbers are here to make you look your best.
+    </p>
+  </section>
 
-    <section id="home">
-      <h2>Welcome to WeBarber</h2>
-      <p>Our barbershop is dedicated to providing top-notch grooming services with a touch of style and precision. Whether you're looking for a classic cut or a modern look, our skilled barbers are here to make you look your best.
-      </p>
-      <hr />
-    </section>
+  <main class="max-w-[900px] mx-auto px-6 pb-24">
 
-    <section id="gallery">
-      <h2 class="gallery-title">Crafted with Precision</h2>
-      <p class="gallery-label">Our Work</p>
+    <!-- gallery -->
+    <section id="gallery" class="border-0 shadow-none bg-transparent my-14 p-0 hover:transform-none hover:shadow-none">
+      <h2 class="text-[clamp(1.4rem,3vw,2rem)] font-extrabold tracking-[-0.6px] text-[#111111] text-center">Crafted with Precision</h2>
+      <p class="text-[0.72rem] font-bold tracking-[0.2em] uppercase text-[#aeaeb2] text-center -mt-2 mb-4">Our Work</p>
       <div class="gallery-grid">
-        <div class="gallery-item gallery-featured">
-          <img src="img/img7.avif" alt="Featured Cut" />
-          <div class="gallery-overlay"><span>Signature Cut</span></div>
+        <!-- Featured -->
+        <div class="gallery-item gallery-featured relative overflow-hidden rounded-[10px] bg-[#e8e8ed] cursor-pointer">
+          <img src="img/img7.avif" alt="Featured Cut" class="w-full h-full object-cover block transition-transform duration-500 ease-out" />
+          <div class="gallery-overlay absolute inset-0 flex items-end px-[1.1rem] pb-4 opacity-0 transition-opacity duration-300">
+            <span class="text-[0.82rem] font-bold tracking-[0.08em] uppercase text-white/90">Signature Cut</span>
+          </div>
         </div>
-        <div class="gallery-item">
-          <img src="img/img1.jpg" alt="Barbershop Style 1" />
-          <div class="gallery-overlay"><span>Beard trim</span></div>
+        <!-- Item 2 -->
+        <div class="gallery-item relative overflow-hidden rounded-[10px] bg-[#e8e8ed] aspect-square cursor-pointer">
+          <img src="img/img1.jpg" alt="Barbershop Style 1" class="w-full h-full object-cover block transition-transform duration-500 ease-out" />
+          <div class="gallery-overlay absolute inset-0 flex items-end px-[1.1rem] pb-4 opacity-0 transition-opacity duration-300">
+            <span class="text-[0.82rem] font-bold tracking-[0.08em] uppercase text-white/90">Beard trim</span>
+          </div>
         </div>
-        <div class="gallery-item">
-          <img src="img/img2.jpg" alt="Barbershop Style 2" />
-          <div class="gallery-overlay"><span>Stair Cut</span></div>
+        <!-- Item 3 -->
+        <div class="gallery-item relative overflow-hidden rounded-[10px] bg-[#e8e8ed] aspect-square cursor-pointer">
+          <img src="img/img2.jpg" alt="Barbershop Style 2" class="w-full h-full object-cover block transition-transform duration-500 ease-out" />
+          <div class="gallery-overlay absolute inset-0 flex items-end px-[1.1rem] pb-4 opacity-0 transition-opacity duration-300">
+            <span class="text-[0.82rem] font-bold tracking-[0.08em] uppercase text-white/90">Stair Cut</span>
+          </div>
         </div>
-        <div class="gallery-item">
-          <img src="img/img3.jpg" alt="Barbershop Style 3" />
-          <div class="gallery-overlay"><span>Modern Mullet</span></div>
+        <!-- Item 4 -->
+        <div class="gallery-item relative overflow-hidden rounded-[10px] bg-[#e8e8ed] aspect-square cursor-pointer">
+          <img src="img/img3.jpg" alt="Barbershop Style 3" class="w-full h-full object-cover block transition-transform duration-500 ease-out" />
+          <div class="gallery-overlay absolute inset-0 flex items-end px-[1.1rem] pb-4 opacity-0 transition-opacity duration-300">
+            <span class="text-[0.82rem] font-bold tracking-[0.08em] uppercase text-white/90">Modern Mullet</span>
+          </div>
         </div>
-        <div class="gallery-item">
-          <img src="img/img4.jpg" alt="Barbershop Style 4" />
-          <div class="gallery-overlay"><span>Undercut</span></div>
+        <!-- Item 5 -->
+        <div class="gallery-item relative overflow-hidden rounded-[10px] bg-[#e8e8ed] aspect-square cursor-pointer">
+          <img src="img/img4.jpg" alt="Barbershop Style 4" class="w-full h-full object-cover block transition-transform duration-500 ease-out" />
+          <div class="gallery-overlay absolute inset-0 flex items-end px-[1.1rem] pb-4 opacity-0 transition-opacity duration-300">
+            <span class="text-[0.82rem] font-bold tracking-[0.08em] uppercase text-white/90">Undercut</span>
+          </div>
         </div>
-        <div class="gallery-item">
-          <img src="img/img5.jpg" alt="Barbershop Style 5" />
-          <div class="gallery-overlay"><span>French Crop</span></div>
+        <!-- Item 6 -->
+        <div class="gallery-item relative overflow-hidden rounded-[10px] bg-[#e8e8ed] aspect-square cursor-pointer">
+          <img src="img/img5.jpg" alt="Barbershop Style 5" class="w-full h-full object-cover block transition-transform duration-500 ease-out" />
+          <div class="gallery-overlay absolute inset-0 flex items-end px-[1.1rem] pb-4 opacity-0 transition-opacity duration-300">
+            <span class="text-[0.82rem] font-bold tracking-[0.08em] uppercase text-white/90">French Crop</span>
+          </div>
         </div>
-        <div class="gallery-item">
-          <img src="img/img6.jpeg" alt="Barbershop Style 6" />
-          <div class="gallery-overlay"><span>Mode on aktif</span></div>
+        <!-- Item 7 -->
+        <div class="gallery-item relative overflow-hidden rounded-[10px] bg-[#e8e8ed] aspect-square cursor-pointer">
+          <img src="img/img6.jpeg" alt="Barbershop Style 6" class="w-full h-full object-cover block transition-transform duration-500 ease-out" />
+          <div class="gallery-overlay absolute inset-0 flex items-end px-[1.1rem] pb-4 opacity-0 transition-opacity duration-300">
+            <span class="text-[0.82rem] font-bold tracking-[0.08em] uppercase text-white/90">Mode on aktif</span>
+          </div>
         </div>
       </div>
     </section>
 
-
-    <section id="menu">
-      <p class="section-eyebrow">What We Offer</p>
-      <h2 class="section-heading">Our Services</h2>
-      <div class="menu-cards">
-        <a href="menu.html" class="menu-card menu-card--dark">
-          <span class="menu-card-label">Haircut &amp; Styling</span>
-          <span class="menu-card-title">Premium Cuts</span>
-          <span class="menu-card-desc">Signature, Fade, Undercut &amp; more</span>
-          <span class="menu-card-arrow">→</span>
+    <!-- services -->
+    <section id="menu" class="mb-8 p-10 border border-[#d2d2d7] rounded-2xl bg-[#f5f5f7] shadow-[0_1px_4px_rgba(0,0,0,0.04),0_4px_16px_rgba(0,0,0,0.05)] hover:shadow-[0_1px_4px_rgba(0,0,0,0.04),0_4px_16px_rgba(0,0,0,0.05)] hover:translate-y-0">
+      <p class="block text-[0.68rem] font-bold tracking-[0.28em] uppercase text-[#aeaeb2] mb-1">What We Offer</p>
+      <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-extrabold tracking-[-0.6px] text-[#111111] mb-5 pb-0 border-0">Our Services</h2>
+      <div class="grid grid-cols-3 gap-3 mb-6 max-sm:grid-cols-1">
+        <!-- card dark -->
+        <a href="menu.html" class="menu-card flex flex-col gap-1 p-6 rounded-xl border border-[#111111] bg-[#111111] no-underline relative overflow-hidden transition-all duration-200 shadow-[0_1px_4px_rgba(0,0,0,0.04)] hover:-translate-y-1 hover:shadow-[0_6px_24px_rgba(0,0,0,0.10)]">
+          <span class="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-white/35">Haircut &amp; Styling</span>
+          <span class="text-[1.05rem] font-bold tracking-tight text-white my-0.5">Premium Cuts</span>
+          <span class="text-[0.78rem] text-white/45 leading-relaxed flex-1">Signature, Fade, Undercut &amp; more</span>
+          <span class="menu-card-arrow text-[1rem] text-white/50 mt-3 transition-all duration-200 hover:text-white/85">→</span>
         </a>
-        <a href="menu.html" class="menu-card">
-          <span class="menu-card-label">Beard</span>
-          <span class="menu-card-title">Beard &amp; Shave</span>
-          <span class="menu-card-desc">Trim, Hot Towel &amp; Combo package</span>
-          <span class="menu-card-arrow">→</span>
+        <!-- card light -->
+        <a href="menu.html" class="menu-card flex flex-col gap-1 p-6 rounded-xl border border-[#d2d2d7] bg-white no-underline relative overflow-hidden transition-all duration-200 shadow-[0_1px_4px_rgba(0,0,0,0.04)] hover:-translate-y-1 hover:shadow-[0_6px_24px_rgba(0,0,0,0.10)] hover:border-[#c2c2c7]">
+          <span class="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#aeaeb2]">Beard</span>
+          <span class="text-[1.05rem] font-bold tracking-tight text-[#111111] my-0.5">Beard &amp; Shave</span>
+          <span class="text-[0.78rem] text-[#6e6e73] leading-relaxed flex-1">Trim, Hot Towel &amp; Combo package</span>
+          <span class="menu-card-arrow text-[1rem] text-[#aeaeb2] mt-3 transition-all duration-200 hover:text-[#111111]">→</span>
         </a>
-        <a href="menu.html" class="menu-card">
-          <span class="menu-card-label">Treatment</span>
-          <span class="menu-card-title">Hair Care</span>
-          <span class="menu-card-desc">Scalp massage, coloring &amp; styling</span>
-          <span class="menu-card-arrow">→</span>
+        <!-- card light -->
+        <a href="menu.html" class="menu-card flex flex-col gap-1 p-6 rounded-xl border border-[#d2d2d7] bg-white no-underline relative overflow-hidden transition-all duration-200 shadow-[0_1px_4px_rgba(0,0,0,0.04)] hover:-translate-y-1 hover:shadow-[0_6px_24px_rgba(0,0,0,0.10)] hover:border-[#c2c2c7]">
+          <span class="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#aeaeb2]">Treatment</span>
+          <span class="text-[1.05rem] font-bold tracking-tight text-[#111111] my-0.5">Hair Care</span>
+          <span class="text-[0.78rem] text-[#6e6e73] leading-relaxed flex-1">Scalp massage, coloring &amp; styling</span>
+          <span class="menu-card-arrow text-[1rem] text-[#aeaeb2] mt-3 transition-all duration-200 hover:text-[#111111]">→</span>
         </a>
       </div>
-      <a href="menu.html" class="menu-cta">View Full Menu &amp; Pricing →</a>
+      <a href="menu.html" class="inline-flex items-center gap-1.5 text-[0.82rem] font-semibold text-[#111111] no-underline border-b border-[#111111] pb-px tracking-[0.02em] transition-opacity duration-200 hover:opacity-55">
+        View Full Menu &amp; Pricing →
+      </a>
     </section>
 
-    <section id="anggota">
-      <h2 class="section-heading">Our Teams</h2>
-      <div class="team-grid">
-        <a href="kontak.html" class="team-card">
-          <div class="team-avatar">E</div>
-          <div class="team-info">
-            <span class="team-name">Evan</span>
-            <span class="team-role">Founder & Head Barber</span>
+    <!-- team -->
+    <section id="anggota" class="mb-8 p-10 border border-[#222] rounded-2xl bg-[#111111] shadow-[0_1px_4px_rgba(0,0,0,0.04),0_4px_16px_rgba(0,0,0,0.05)] hover:translate-y-0 hover:shadow-[0_1px_4px_rgba(0,0,0,0.04),0_4px_16px_rgba(0,0,0,0.05)]">
+      <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-extrabold tracking-[-0.6px] text-white mb-5 pb-0 border-0">Our Teams</h2>
+      <div class="grid grid-cols-2 gap-3 max-sm:grid-cols-1">
+        <!-- Team card Evan -->
+        <a href="kontak.html" class="team-card flex items-center gap-4 px-5 py-4 bg-white/5 border border-white/10 rounded-xl no-underline transition-all duration-200 hover:bg-white/10 hover:border-white/20 hover:-translate-y-0.5">
+          <div class="w-11 h-11 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[1rem] font-extrabold text-white/75 tracking-tight shrink-0">E</div>
+          <div class="flex flex-col gap-0.5 flex-1">
+            <span class="text-[0.95rem] font-bold text-white tracking-tight">Evan</span>
+            <span class="text-[0.75rem] font-medium text-white/35 tracking-[0.02em]">Founder & Head Barber</span>
           </div>
-          <span class="team-arrow">→</span>
+          <span class="team-arrow text-[0.9rem] text-white/25 transition-all duration-200 hover:text-white/60">→</span>
         </a>
-        <a href="kontak.html" class="team-card">
-          <div class="team-avatar">F</div>
-          <div class="team-info">
-            <span class="team-name">Fairus</span>
-            <span class="team-role">Co-Founder & Operations Manager</span>
+        <!-- Team card Fairus -->
+        <a href="kontak.html" class="team-card flex items-center gap-4 px-5 py-4 bg-white/5 border border-white/10 rounded-xl no-underline transition-all duration-200 hover:bg-white/10 hover:border-white/20 hover:-translate-y-0.5">
+          <div class="w-11 h-11 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[1rem] font-extrabold text-white/75 tracking-tight shrink-0">F</div>
+          <div class="flex flex-col gap-0.5 flex-1">
+            <span class="text-[0.95rem] font-bold text-white tracking-tight">Fairus</span>
+            <span class="text-[0.75rem] font-medium text-white/35 tracking-[0.02em]">Co-Founder & Operations Manager</span>
           </div>
-          <span class="team-arrow">→</span>
+          <span class="team-arrow text-[0.9rem] text-white/25 transition-all duration-200 hover:text-white/60">→</span>
         </a>
       </div>
     </section>
 
   </main>
 
-  <footer>
+  <footer class="text-center py-6 text-[0.78rem] text-[#aeaeb2] border-t border-[#d2d2d7] bg-[#f5f5f7] tracking-[0.01em]">
     <p>&copy; WeBarber</p>
   </footer>
 
