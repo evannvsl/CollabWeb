@@ -4,226 +4,277 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WeBarber</title>
-  <link rel="stylesheet" href="menu.css" />
-</head>
-<body>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            gold: '#b8a060',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; }
 
-  <header>
-    <h1>WeBarber</h1>
-    <nav>
-      <a href="main.html">Home</a> |
-      <a href="menu.html">Menu</a> |
-      <a href="kontak.html">Contact</a>
+    .banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        -45deg,
+        rgba(255,255,255,0.015) 0px,
+        rgba(255,255,255,0.015) 1px,
+        transparent 1px,
+        transparent 10px
+      );
+      pointer-events: none;
+    }
+
+    .policy-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #b8a060;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body class="font-sans bg-[#f5f5f7] text-[#1d1d1f] leading-relaxed">
+
+  <!-- nav -->
+  <header class="sticky top-0 z-50 h-[52px] flex items-center justify-between px-10 bg-white/90 backdrop-blur-xl backdrop-saturate-180 border-b border-[#d2d2d7] max-sm:px-4">
+    <h1 class="text-[1.03rem] font-bold text-[#0a0a0a]">WeBarber</h1>
+    <nav class="flex gap-1">
+      <a href="main.html"   class="text-[0.82rem] font-medium text-[#6e6e73] no-underline px-3.5 py-1 rounded-full tracking-[0.02em] transition-colors hover:bg-[#e8e8ed] hover:text-[#0a0a0a]">Home</a>|
+      <a href="menu.html"   class="text-[0.82rem] font-medium text-[#6e6e73] no-underline px-3.5 py-1 rounded-full tracking-[0.02em] transition-colors hover:bg-[#e8e8ed] hover:text-[#0a0a0a]">Menu</a>|
+      <a href="kontak.html" class="text-[0.82rem] font-medium text-[#6e6e73] no-underline px-3.5 py-1 rounded-full tracking-[0.02em] transition-colors hover:bg-[#e8e8ed] hover:text-[#0a0a0a]">Contact</a>
     </nav>
-    <hr />
   </header>
 
-  <main>
+  <section class="banner relative bg-[#0a0a0a] py-20 px-8 text-center overflow-hidden max-sm:py-14 max-sm:px-5">
+    <p class="text-[0.7rem] font-bold tracking-[0.3em] uppercase text-[#b8a060] mb-4">Our Services</p>
+    <h2 class="text-[clamp(2rem,5vw,3.4rem)] font-extrabold tracking-[-1px] text-white leading-none mb-4">Grooming, Redefined.</h2>
+    <p class="text-[0.7rem] font-light italic text-white/45 max-w-[440px] mx-auto">Every cut tells a story. We make sure yours is worth telling.</p>
+  </section>
 
-    <section class="banner">
-      <p class="banner-label">Our Services</p>
-      <h2 class="banner-title">Grooming, Redefined.</h2>
-      <p class="banner-sub">Every cut tells a story. We make sure yours is worth telling.</p>
-    </section>
+  <main class="max-w-[960px] mx-auto px-6 pb-24 max-sm:px-4">
 
-    <section class="menu-section">
-      <p class="section-label">Services</p>
-      <h3 class="section-title">Haircut &amp; Styling</h3>
-      <div class="service-grid">
+    <section class="mt-14 max-sm:mt-10">
+      <p class="text-[0.68rem] font-bold tracking-[0.25em] uppercase text-[#b8a060] mb-1">Services</p>
+      <h3 class="text-[1.55rem] font-extrabold tracking-[-0.5px] text-[#0a0a0a] mb-6 pb-4 border-b border-[#d2d2d7]">Haircut &amp; Styling</h3>
+      <div class="grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-4 max-sm:grid-cols-1">
 
-        <div class="service-card">
-          <div class="service-top">
-            <span class="service-name">Signature Cut</span>
-            <span class="service-price">Rp 75.000</span>
+        <div class="relative bg-white border border-[#d2d2d7] rounded-2xl px-6 py-5 flex flex-col gap-2 shadow-[0_1px_4px_rgba(0,0,0,0.04)] transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,0,0,0.09),0_12px_32px_rgba(0,0,0,0.07)] hover:border-[#c2c2c7]">
+          <div class="flex justify-between items-baseline gap-2">
+            <span class="text-[1rem] font-bold text-[#0a0a0a] tracking-tight">Signature Cut</span>
+            <span class="text-[0.95rem] font-bold text-[#0a0a0a] whitespace-nowrap tracking-tight">Rp 75.000</span>
           </div>
-          <p class="service-desc">Precision haircut by our senior barber. Includes style consultation and finishing spray.</p>
-          <span class="service-duration">± 45 min</span>
+          <p class="text-[0.83rem] text-[#6e6e73] leading-relaxed flex-1">Precision haircut by our senior barber. Includes style consultation and finishing spray.</p>
+          <span class="text-[0.72rem] font-semibold tracking-[0.05em] uppercase text-[#aeaeb2] mt-1">± 45 min</span>
         </div>
 
-        <div class="service-card">
-          <div class="service-top">
-            <span class="service-name">Classic Fade</span>
-            <span class="service-price">Rp 65.000</span>
+        <div class="relative bg-white border border-[#d2d2d7] rounded-2xl px-6 py-5 flex flex-col gap-2 shadow-[0_1px_4px_rgba(0,0,0,0.04)] transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,0,0,0.09),0_12px_32px_rgba(0,0,0,0.07)] hover:border-[#c2c2c7]">
+          <div class="flex justify-between items-baseline gap-2">
+            <span class="text-[1rem] font-bold text-[#0a0a0a] tracking-tight">Classic Fade</span>
+            <span class="text-[0.95rem] font-bold text-[#0a0a0a] whitespace-nowrap tracking-tight">Rp 65.000</span>
           </div>
-          <p class="service-desc">Clean fade from skin to the top of the head. Suitable for both formal and casual appearances.</p>
-          <span class="service-duration">± 40 min</span>
+          <p class="text-[0.83rem] text-[#6e6e73] leading-relaxed flex-1">Clean fade from skin to the top of the head. Suitable for both formal and casual appearances.</p>
+          <span class="text-[0.72rem] font-semibold tracking-[0.05em] uppercase text-[#aeaeb2] mt-1">± 40 min</span>
         </div>
 
-        <div class="service-card">
-          <div class="service-top">
-            <span class="service-name">Textured Crop</span>
-            <span class="service-price">Rp 70.000</span>
+        <div class="relative bg-white border border-[#d2d2d7] rounded-2xl px-6 py-5 flex flex-col gap-2 shadow-[0_1px_4px_rgba(0,0,0,0.04)] transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,0,0,0.09),0_12px_32px_rgba(0,0,0,0.07)] hover:border-[#c2c2c7]">
+          <div class="flex justify-between items-baseline gap-2">
+            <span class="text-[1rem] font-bold text-[#0a0a0a] tracking-tight">Textured Crop</span>
+            <span class="text-[0.95rem] font-bold text-[#0a0a0a] whitespace-nowrap tracking-tight">Rp 70.000</span>
           </div>
-          <p class="service-desc">Modern cutting technique with texture on the top. Suitable for both thick and thin hair.</p>
-          <span class="service-duration">± 45 min</span>
+          <p class="text-[0.83rem] text-[#6e6e73] leading-relaxed flex-1">Modern cutting technique with texture on the top. Suitable for both thick and thin hair.</p>
+          <span class="text-[0.72rem] font-semibold tracking-[0.05em] uppercase text-[#aeaeb2] mt-1">± 45 min</span>
         </div>
 
-        <div class="service-card">
-          <div class="service-top">
-            <span class="service-name">Undercut</span>
-            <span class="service-price">Rp 60.000</span>
+        <div class="relative bg-white border border-[#d2d2d7] rounded-2xl px-6 py-5 flex flex-col gap-2 shadow-[0_1px_4px_rgba(0,0,0,0.04)] transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,0,0,0.09),0_12px_32px_rgba(0,0,0,0.07)] hover:border-[#c2c2c7]">
+          <div class="flex justify-between items-baseline gap-2">
+            <span class="text-[1rem] font-bold text-[#0a0a0a] tracking-tight">Undercut</span>
+            <span class="text-[0.95rem] font-bold text-[#0a0a0a] whitespace-nowrap tracking-tight">Rp 60.000</span>
           </div>
-          <p class="service-desc">Clean trim on the sides and back, leaving the top longer. Bold &amp; confident look.</p>
-          <span class="service-duration">± 35 min</span>
+          <p class="text-[0.83rem] text-[#6e6e73] leading-relaxed flex-1">Clean trim on the sides and back, leaving the top longer. Bold &amp; confident look.</p>
+          <span class="text-[0.72rem] font-semibold tracking-[0.05em] uppercase text-[#aeaeb2] mt-1">± 35 min</span>
         </div>
 
-        <div class="service-card">
-          <div class="service-top">
-            <span class="service-name">Crew Cut</span>
-            <span class="service-price">Rp 55.000</span>
+        <div class="relative bg-white border border-[#d2d2d7] rounded-2xl px-6 py-5 flex flex-col gap-2 shadow-[0_1px_4px_rgba(0,0,0,0.04)] transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,0,0,0.09),0_12px_32px_rgba(0,0,0,0.07)] hover:border-[#c2c2c7]">
+          <div class="flex justify-between items-baseline gap-2">
+            <span class="text-[1rem] font-bold text-[#0a0a0a] tracking-tight">Crew Cut</span>
+            <span class="text-[0.95rem] font-bold text-[#0a0a0a] whitespace-nowrap tracking-tight">Rp 55.000</span>
           </div>
-          <p class="service-desc">Classic short cut with a neat profile. Easy to maintain, always looks clean.</p>
-          <span class="service-duration">± 30 min</span>
+          <p class="text-[0.83rem] text-[#6e6e73] leading-relaxed flex-1">Classic short cut with a neat profile. Easy to maintain, always looks clean.</p>
+          <span class="text-[0.72rem] font-semibold tracking-[0.05em] uppercase text-[#aeaeb2] mt-1">± 30 min</span>
         </div>
 
-        <div class="service-card service-card--highlight">
-          <div class="service-top">
-            <span class="service-name">Full Restyle</span>
-            <span class="service-price">Rp 120.000</span>
+        <!-- highlight card -->
+        <div class="relative bg-[#0a0a0a] border border-[#0a0a0a] rounded-2xl px-6 py-5 flex flex-col gap-2 shadow-[0_1px_4px_rgba(0,0,0,0.04)] transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,0,0,0.09),0_12px_32px_rgba(0,0,0,0.07)] hover:border-[#333]">
+          <div class="flex justify-between items-baseline gap-2">
+            <span class="text-[1rem] font-bold text-white tracking-tight">Full Restyle</span>
+            <span class="text-[0.95rem] font-bold text-white whitespace-nowrap tracking-tight">Rp 120.000</span>
           </div>
-          <p class="service-desc">Deep consultation + total hair style transformation. For a completely new look.</p>
-          <span class="service-duration">± 75 min</span>
-          <span class="service-badge">Most Popular</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="menu-section">
-      <p class="section-label">Beard</p>
-      <h3 class="section-title">Beard &amp; Shave</h3>
-      <div class="service-grid">
-
-        <div class="service-card">
-          <div class="service-top">
-            <span class="service-name">Beard Trim</span>
-            <span class="service-price">Rp 40.000</span>
-          </div>
-          <p class="service-desc">Refine the shape of your beard with a razor and scissors. Includes sharp line definition.</p>
-          <span class="service-duration">± 20 min</span>
-        </div>
-
-        <div class="service-card">
-          <div class="service-top">
-            <span class="service-name">Hot Towel Shave</span>
-            <span class="service-price">Rp 55.000</span>
-          </div>
-          <p class="service-desc">Classic shaving tradition with hot towels, premium shaving cream, and a straight razor.</p>
-          <span class="service-duration">± 30 min</span>
-        </div>
-
-        <div class="service-card service-card--highlight">
-          <div class="service-top">
-            <span class="service-name">Cut + Beard Combo</span>
-            <span class="service-price">Rp 105.000</span>
-          </div>
-          <p class="service-desc">Precision haircut by our senior barber combined with a beard trim. The ultimate grooming package.</p>
-          <span class="service-duration">± 60 min</span>
-          <span class="service-badge">Best Value</span>
+          <p class="text-[0.83rem] text-white/55 leading-relaxed flex-1">Deep consultation + total hair style transformation. For a completely new look.</p>
+          <span class="text-[0.72rem] font-semibold tracking-[0.05em] uppercase text-white mt-1">± 75 min</span>
+          <span class="self-start text-[0.65rem] font-bold tracking-[0.1em] uppercase text-[#b8a060] border border-[#b8a060] px-2 py-0.5 rounded mt-1">Most Popular</span>
         </div>
 
       </div>
     </section>
 
-    <section class="menu-section">
-      <p class="section-label">Treatment</p>
-      <h3 class="section-title">Hair &amp; Scalp Treatment</h3>
-      <div class="service-grid">
+    <section class="mt-14 max-sm:mt-10">
+      <p class="text-[0.68rem] font-bold tracking-[0.25em] uppercase text-[#b8a060] mb-1">Beard</p>
+      <h3 class="text-[1.55rem] font-extrabold tracking-[-0.5px] text-[#0a0a0a] mb-6 pb-4 border-b border-[#d2d2d7]">Beard &amp; Shave</h3>
+      <div class="grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-4 max-sm:grid-cols-1">
 
-        <div class="service-card">
-          <div class="service-top">
-            <span class="service-name">Hair Wash &amp; Blow</span>
-            <span class="service-price">Rp 35.000</span>
+        <div class="relative bg-white border border-[#d2d2d7] rounded-2xl px-6 py-5 flex flex-col gap-2 shadow-[0_1px_4px_rgba(0,0,0,0.04)] transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,0,0,0.09),0_12px_32px_rgba(0,0,0,0.07)] hover:border-[#c2c2c7]">
+          <div class="flex justify-between items-baseline gap-2">
+            <span class="text-[1rem] font-bold text-[#0a0a0a] tracking-tight">Beard Trim</span>
+            <span class="text-[0.95rem] font-bold text-[#0a0a0a] whitespace-nowrap tracking-tight">Rp 40.000</span>
           </div>
-          <p class="service-desc">Premium shampoo wash + blow dry styling. The perfect add-on after a haircut.</p>
-          <span class="service-duration">± 20 min</span>
+          <p class="text-[0.83rem] text-[#6e6e73] leading-relaxed flex-1">Refine the shape of your beard with a razor and scissors. Includes sharp line definition.</p>
+          <span class="text-[0.72rem] font-semibold tracking-[0.05em] uppercase text-[#aeaeb2] mt-1">± 20 min</span>
         </div>
 
-        <div class="service-card">
-          <div class="service-top">
-            <span class="service-name">Scalp Massage</span>
-            <span class="service-price">Rp 45.000</span>
+        <div class="relative bg-white border border-[#d2d2d7] rounded-2xl px-6 py-5 flex flex-col gap-2 shadow-[0_1px_4px_rgba(0,0,0,0.04)] transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,0,0,0.09),0_12px_32px_rgba(0,0,0,0.07)] hover:border-[#c2c2c7]">
+          <div class="flex justify-between items-baseline gap-2">
+            <span class="text-[1rem] font-bold text-[#0a0a0a] tracking-tight">Hot Towel Shave</span>
+            <span class="text-[0.95rem] font-bold text-[#0a0a0a] whitespace-nowrap tracking-tight">Rp 55.000</span>
           </div>
-          <p class="service-desc">15-minute scalp massage with essential oils. Total relaxation, improved circulation.</p>
-          <span class="service-duration">± 15 min</span>
+          <p class="text-[0.83rem] text-[#6e6e73] leading-relaxed flex-1">Classic shaving tradition with hot towels, premium shaving cream, and a straight razor.</p>
+          <span class="text-[0.72rem] font-semibold tracking-[0.05em] uppercase text-[#aeaeb2] mt-1">± 30 min</span>
         </div>
 
-        <div class="service-card">
-          <div class="service-top">
-            <span class="service-name">Hair Coloring</span>
-            <span class="service-price">Rp 150.000+</span>
+        <!-- highlight card -->
+        <div class="relative bg-[#0a0a0a] border border-[#0a0a0a] rounded-2xl px-6 py-5 flex flex-col gap-2 shadow-[0_1px_4px_rgba(0,0,0,0.04)] transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,0,0,0.09),0_12px_32px_rgba(0,0,0,0.07)] hover:border-[#333]">
+          <div class="flex justify-between items-baseline gap-2">
+            <span class="text-[1rem] font-bold text-white tracking-tight">Cut + Beard Combo</span>
+            <span class="text-[0.95rem] font-bold text-white whitespace-nowrap tracking-tight">Rp 105.000</span>
           </div>
-          <p class="service-desc">Professional hair coloring with quality products. Price varies based on length and color type.</p>
-          <span class="service-duration">± 90 min</span>
-        </div>
-
-        <div class="service-card">
-          <div class="service-top">
-            <span class="service-name">Pomade Styling</span>
-            <span class="service-price">Rp 25.000</span>
-          </div>
-          <p class="service-desc">Finishing with chosen pomade or wax according to hair style. Results last all day.</p>
-          <span class="service-duration">± 10 min</span>
+          <p class="text-[0.83rem] text-white/55 leading-relaxed flex-1">Precision haircut by our senior barber combined with a beard trim. The ultimate grooming package.</p>
+          <span class="text-[0.72rem] font-semibold tracking-[0.05em] uppercase text-white mt-1">± 60 min</span>
+          <span class="self-start text-[0.65rem] font-bold tracking-[0.1em] uppercase text-[#b8a060] border border-[#b8a060] px-2 py-0.5 rounded mt-1">Best Value</span>
         </div>
 
       </div>
     </section>
 
-    <section class="menu-section">
-      <p class="section-label">Schedule</p>
-      <h3 class="section-title">Operating Hours</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Day</th>
-            <th>Opening Time</th>
-            <th>Closing Time</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Monday – Friday</td>
-            <td>09.00 AM</td>
-            <td>21.00 PM</td>
-            <td><span class="status status--open">Open</span></td>
-          </tr>
-          <tr>
-            <td>Saturday</td>
-            <td>08.00 AM</td>
-            <td>22.00 PM</td>
-            <td><span class="status status--open">Open</span></td>
-          </tr>
-          <tr>
-            <td>Sunday</td>
-            <td>09.00 AM</td>
-            <td>20.00 PM</td>
-            <td><span class="status status--open">Open</span></td>
-          </tr>
-          <tr>
-            <td>National Holidays</td>
-            <td>—</td>
-            <td>—</td>
-            <td><span class="status status--closed">Closed</span></td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- treatment -->
+    <section class="mt-14 max-sm:mt-10">
+      <p class="text-[0.68rem] font-bold tracking-[0.25em] uppercase text-[#b8a060] mb-1">Treatment</p>
+      <h3 class="text-[1.55rem] font-extrabold tracking-[-0.5px] text-[#0a0a0a] mb-6 pb-4 border-b border-[#d2d2d7]">Hair &amp; Scalp Treatment</h3>
+      <div class="grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-4 max-sm:grid-cols-1">
+
+        <div class="relative bg-white border border-[#d2d2d7] rounded-2xl px-6 py-5 flex flex-col gap-2 shadow-[0_1px_4px_rgba(0,0,0,0.04)] transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,0,0,0.09),0_12px_32px_rgba(0,0,0,0.07)] hover:border-[#c2c2c7]">
+          <div class="flex justify-between items-baseline gap-2">
+            <span class="text-[1rem] font-bold text-[#0a0a0a] tracking-tight">Hair Wash &amp; Blow</span>
+            <span class="text-[0.95rem] font-bold text-[#0a0a0a] whitespace-nowrap tracking-tight">Rp 35.000</span>
+          </div>
+          <p class="text-[0.83rem] text-[#6e6e73] leading-relaxed flex-1">Premium shampoo wash + blow dry styling. The perfect add-on after a haircut.</p>
+          <span class="text-[0.72rem] font-semibold tracking-[0.05em] uppercase text-[#aeaeb2] mt-1">± 20 min</span>
+        </div>
+
+        <div class="relative bg-white border border-[#d2d2d7] rounded-2xl px-6 py-5 flex flex-col gap-2 shadow-[0_1px_4px_rgba(0,0,0,0.04)] transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,0,0,0.09),0_12px_32px_rgba(0,0,0,0.07)] hover:border-[#c2c2c7]">
+          <div class="flex justify-between items-baseline gap-2">
+            <span class="text-[1rem] font-bold text-[#0a0a0a] tracking-tight">Scalp Massage</span>
+            <span class="text-[0.95rem] font-bold text-[#0a0a0a] whitespace-nowrap tracking-tight">Rp 45.000</span>
+          </div>
+          <p class="text-[0.83rem] text-[#6e6e73] leading-relaxed flex-1">15-minute scalp massage with essential oils. Total relaxation, improved circulation.</p>
+          <span class="text-[0.72rem] font-semibold tracking-[0.05em] uppercase text-[#aeaeb2] mt-1">± 15 min</span>
+        </div>
+
+        <div class="relative bg-white border border-[#d2d2d7] rounded-2xl px-6 py-5 flex flex-col gap-2 shadow-[0_1px_4px_rgba(0,0,0,0.04)] transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,0,0,0.09),0_12px_32px_rgba(0,0,0,0.07)] hover:border-[#c2c2c7]">
+          <div class="flex justify-between items-baseline gap-2">
+            <span class="text-[1rem] font-bold text-[#0a0a0a] tracking-tight">Hair Coloring</span>
+            <span class="text-[0.95rem] font-bold text-[#0a0a0a] whitespace-nowrap tracking-tight">Rp 150.000+</span>
+          </div>
+          <p class="text-[0.83rem] text-[#6e6e73] leading-relaxed flex-1">Professional hair coloring with quality products. Price varies based on length and color type.</p>
+          <span class="text-[0.72rem] font-semibold tracking-[0.05em] uppercase text-[#aeaeb2] mt-1">± 90 min</span>
+        </div>
+
+        <div class="relative bg-white border border-[#d2d2d7] rounded-2xl px-6 py-5 flex flex-col gap-2 shadow-[0_1px_4px_rgba(0,0,0,0.04)] transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,0,0,0.09),0_12px_32px_rgba(0,0,0,0.07)] hover:border-[#c2c2c7]">
+          <div class="flex justify-between items-baseline gap-2">
+            <span class="text-[1rem] font-bold text-[#0a0a0a] tracking-tight">Pomade Styling</span>
+            <span class="text-[0.95rem] font-bold text-[#0a0a0a] whitespace-nowrap tracking-tight">Rp 25.000</span>
+          </div>
+          <p class="text-[0.83rem] text-[#6e6e73] leading-relaxed flex-1">Finishing with chosen pomade or wax according to hair style. Results last all day.</p>
+          <span class="text-[0.72rem] font-semibold tracking-[0.05em] uppercase text-[#aeaeb2] mt-1">± 10 min</span>
+        </div>
+
+      </div>
     </section>
 
-    <section class="menu-section">
-      <p class="section-label">Information</p>
-      <h3 class="section-title">Terms & Conditions</h3>
-      <ul class="policy-list">
-        <li>Walk-in available, but reservations are recommended to avoid waiting.</li>
-        <li>Cancellation of reservations should be done at least 1 hour before the scheduled time.</li>
-        <li>Prices may change at any time, please confirm at the time of reservation.</li>
-        <li>We use premium care products free from parabens.</li>
-        <li>Customer satisfaction is our priority — not satisfied? We'll fix it at no extra cost.</li>
+    <!-- operating hours -->
+    <section class="mt-14 max-sm:mt-10">
+      <p class="text-[0.68rem] font-bold tracking-[0.25em] uppercase text-[#b8a060] mb-1">Schedule</p>
+      <h3 class="text-[1.55rem] font-extrabold tracking-[-0.5px] text-[#0a0a0a] mb-6 pb-4 border-b border-[#d2d2d7]">Operating Hours</h3>
+      <div class="overflow-hidden rounded-2xl border border-[#d2d2d7] shadow-[0_2px_8px_rgba(0,0,0,0.05)] bg-white">
+        <table class="w-full border-collapse text-[0.88rem]">
+          <thead class="bg-[#0a0a0a]">
+            <tr>
+              <th class="text-left px-5 py-3 text-[0.7rem] font-bold text-white/60 uppercase tracking-[0.1em]">Day</th>
+              <th class="text-left px-5 py-3 text-[0.7rem] font-bold text-white/60 uppercase tracking-[0.1em]">Opening Time</th>
+              <th class="text-left px-5 py-3 text-[0.7rem] font-bold text-white/60 uppercase tracking-[0.1em]">Closing Time</th>
+              <th class="text-left px-5 py-3 text-[0.7rem] font-bold text-white/60 uppercase tracking-[0.1em]">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-[#f5f5f7] transition-colors hover:bg-[#f5f5f7]">
+              <td class="px-5 py-3.5 text-[#3a3a3c] align-middle">Monday – Friday</td>
+              <td class="px-5 py-3.5 text-[#3a3a3c] align-middle">09.00 AM</td>
+              <td class="px-5 py-3.5 text-[#3a3a3c] align-middle">21.00 PM</td>
+              <td class="px-5 py-3.5 align-middle"><span class="inline-block text-[0.72rem] font-bold tracking-[0.06em] uppercase px-2.5 py-0.5 rounded-full bg-[#f0faf4] text-[#1a7a40] border border-[#b6e8cc]">Open</span></td>
+            </tr>
+            <tr class="border-b border-[#f5f5f7] transition-colors hover:bg-[#f5f5f7]">
+              <td class="px-5 py-3.5 text-[#3a3a3c] align-middle">Saturday</td>
+              <td class="px-5 py-3.5 text-[#3a3a3c] align-middle">08.00 AM</td>
+              <td class="px-5 py-3.5 text-[#3a3a3c] align-middle">22.00 PM</td>
+              <td class="px-5 py-3.5 align-middle"><span class="inline-block text-[0.72rem] font-bold tracking-[0.06em] uppercase px-2.5 py-0.5 rounded-full bg-[#f0faf4] text-[#1a7a40] border border-[#b6e8cc]">Open</span></td>
+            </tr>
+            <tr class="border-b border-[#f5f5f7] transition-colors hover:bg-[#f5f5f7]">
+              <td class="px-5 py-3.5 text-[#3a3a3c] align-middle">Sunday</td>
+              <td class="px-5 py-3.5 text-[#3a3a3c] align-middle">09.00 AM</td>
+              <td class="px-5 py-3.5 text-[#3a3a3c] align-middle">20.00 PM</td>
+              <td class="px-5 py-3.5 align-middle"><span class="inline-block text-[0.72rem] font-bold tracking-[0.06em] uppercase px-2.5 py-0.5 rounded-full bg-[#f0faf4] text-[#1a7a40] border border-[#b6e8cc]">Open</span></td>
+            </tr>
+            <tr class="transition-colors hover:bg-[#f5f5f7]">
+              <td class="px-5 py-3.5 text-[#3a3a3c] align-middle">National Holidays</td>
+              <td class="px-5 py-3.5 text-[#3a3a3c] align-middle">—</td>
+              <td class="px-5 py-3.5 text-[#3a3a3c] align-middle">—</td>
+              <td class="px-5 py-3.5 align-middle"><span class="inline-block text-[0.72rem] font-bold tracking-[0.06em] uppercase px-2.5 py-0.5 rounded-full bg-[#faf0f0] text-[#8a2020] border border-[#f0c0c0]">Closed</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- terms & conditions -->
+    <section class="mt-14 max-sm:mt-10">
+      <p class="text-[0.68rem] font-bold tracking-[0.25em] uppercase text-[#b8a060] mb-1">Information</p>
+      <h3 class="text-[1.55rem] font-extrabold tracking-[-0.5px] text-[#0a0a0a] mb-6 pb-4 border-b border-[#d2d2d7]">Terms &amp; Conditions</h3>
+      <ul class="policy-list list-none p-0 flex flex-col">
+        <li class="relative text-[0.9rem] text-[#3a3a3c] py-4 pl-6 border-b border-[#e8e8ed] leading-relaxed">Walk-in available, but reservations are recommended to avoid waiting.</li>
+        <li class="relative text-[0.9rem] text-[#3a3a3c] py-4 pl-6 border-b border-[#e8e8ed] leading-relaxed">Cancellation of reservations should be done at least 1 hour before the scheduled time.</li>
+        <li class="relative text-[0.9rem] text-[#3a3a3c] py-4 pl-6 border-b border-[#e8e8ed] leading-relaxed">Prices may change at any time, please confirm at the time of reservation.</li>
+        <li class="relative text-[0.9rem] text-[#3a3a3c] py-4 pl-6 border-b border-[#e8e8ed] leading-relaxed">We use premium care products free from parabens.</li>
+        <li class="relative text-[0.9rem] text-[#3a3a3c] py-4 pl-6 leading-relaxed">Customer satisfaction is our priority — not satisfied? We'll fix it at no extra cost.</li>
       </ul>
     </section>
 
   </main>
 
-  <footer>
+  <footer class="text-center py-6 text-[0.78rem] text-[#aeaeb2] border-t border-[#d2d2d7] bg-white tracking-[0.03em]">
     <p>&copy; WeBarber</p>
   </footer>
 
