@@ -3,134 +3,166 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CollabWeb</title>
-  <link rel="stylesheet" href="kontak.css" />
-</head>
-<body>
+  <title>Contact | WeBarber</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', '-apple-system', 'sans-serif'] },
+          colors: { gold: '#b8a060' },
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; }
+    .contact-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .table-scroll { overflow-x: auto; }
 
-  <header>
-    <h1>WeBarber</h1>
-    <nav>
-      <a href="main.html">Home</a> |
-      <a href="menu.html">Menu</a> |
-      <a href="kontak.html">Contact</a>
+    @media (max-width: 640px) {
+      .contact-form-grid { grid-template-columns: 1fr; }
+      .table-scroll table { min-width: 620px; }
+    }
+  </style>
+</head>
+<body class="font-sans bg-[#f5f5f7] text-[#1d1d1f] leading-relaxed">
+
+  <header class="sticky top-0 z-50 h-[52px] flex items-center justify-between px-10 bg-white/90 backdrop-blur-xl backdrop-saturate-180 border-b border-[#d2d2d7] max-sm:px-4">
+    <h1 class="text-[1.03rem] font-bold text-[#0a0a0a]">WeBarber</h1>
+    <nav class="flex items-center gap-1">
+      <a href="main.html" class="text-[0.82rem] font-medium text-[#6e6e73] no-underline px-3.5 py-1 rounded-full tracking-[0.02em] transition-colors hover:bg-[#e8e8ed] hover:text-[#0a0a0a]">Home</a>
+      <span class="text-[#d2d2d7]" aria-hidden="true">|</span>
+      <a href="menu.html" class="text-[0.82rem] font-medium text-[#6e6e73] no-underline px-3.5 py-1 rounded-full tracking-[0.02em] transition-colors hover:bg-[#e8e8ed] hover:text-[#0a0a0a]">Menu</a>
+      <span class="text-[#d2d2d7]" aria-hidden="true">|</span>
+      <a href="kontak.html" aria-current="page" class="text-[0.82rem] font-semibold text-[#0a0a0a] no-underline px-3.5 py-1 rounded-full tracking-[0.02em] bg-[#f5f5f7]">Contact</a>
     </nav>
-    <hr />
   </header>
 
-  <main>
+  <section class="relative overflow-hidden bg-[#0a0a0a] px-8 py-16 text-center max-sm:px-5 max-sm:py-12">
+    <p class="mb-4 text-[0.7rem] font-bold uppercase tracking-[0.3em] text-[#b8a060]">Get in touch</p>
+    <h2 class="mb-4 text-[clamp(2rem,5vw,3.4rem)] font-extrabold leading-none tracking-[-1px] text-white">Contact Us</h2>
+    <p class="mx-auto max-w-[500px] text-[0.9rem] font-light text-white/60">Ready to look your best? Fill out the form below to schedule your appointment.</p>
+  </section>
 
-    <h2>Contact Us</h2>
-    <p>Ready to look your best? Fill out the form below to schedule your appointment.</p>
+  <main class="mx-auto max-w-[960px] px-6 pb-24 max-sm:px-4">
 
-    <hr />
+    <section class="mt-12 max-sm:mt-9">
+      <p class="mb-1 text-[0.68rem] font-bold uppercase tracking-[0.25em] text-[#b8a060]">Reservation</p>
+      <h3 class="mb-6 border-b border-[#d2d2d7] pb-4 text-[1.55rem] font-extrabold tracking-[-0.5px] text-[#0a0a0a]">Reservation Form</h3>
+      <form action="#" method="post" class="rounded-2xl border border-[#d2d2d7] bg-white p-7 shadow-[0_1px_4px_rgba(0,0,0,0.04)] max-sm:p-5">
+        <div class="contact-form-grid gap-x-5 gap-y-4">
+          <div class="flex min-w-0 flex-col gap-1.5">
+            <label for="nama" class="text-[0.8rem] font-semibold text-[#3a3a3c]">Full Name</label>
+            <input type="text" id="nama" name="nama" placeholder="Enter your name" required class="w-full rounded-lg border border-[#d2d2d7] bg-white px-3.5 py-3 text-[0.88rem] text-[#1d1d1f] outline-none transition focus:border-[#b8a060] focus:ring-2 focus:ring-[#b8a060]/20" />
+          </div>
 
-    <h3>Reservation Form</h3>
-    <form action="#" method="post">
+          <div class="flex min-w-0 flex-col gap-1.5">
+            <label for="telepon" class="text-[0.8rem] font-semibold text-[#3a3a3c]">Telephone Number</label>
+            <input type="tel" id="telepon" name="telepon" placeholder="08xxxxxxxxxx" required class="w-full rounded-lg border border-[#d2d2d7] bg-white px-3.5 py-3 text-[0.88rem] text-[#1d1d1f] outline-none transition focus:border-[#b8a060] focus:ring-2 focus:ring-[#b8a060]/20" />
+          </div>
 
-      <div class="form-grid">
-        <div class="form-field">
-          <label for="nama">Full Name</label>
-          <input type="text" id="nama" name="nama" placeholder="Enter your name" required />
+          <div class="flex min-w-0 flex-col gap-1.5">
+            <label for="email" class="text-[0.8rem] font-semibold text-[#3a3a3c]">Email</label>
+            <input type="email" id="email" name="email" placeholder="Examples@email.com" required class="w-full rounded-lg border border-[#d2d2d7] bg-white px-3.5 py-3 text-[0.88rem] text-[#1d1d1f] outline-none transition focus:border-[#b8a060] focus:ring-2 focus:ring-[#b8a060]/20" />
+          </div>
+
+          <div class="flex min-w-0 flex-col gap-1.5">
+            <label for="Services" class="text-[0.8rem] font-semibold text-[#3a3a3c]">Choose Service</label>
+            <select id="Services" name="Services" required class="w-full rounded-lg border border-[#d2d2d7] bg-white px-3.5 py-3 text-[0.88rem] text-[#1d1d1f] outline-none transition focus:border-[#b8a060] focus:ring-2 focus:ring-[#b8a060]/20">
+              <option value="" selected disabled>Choose service</option>
+              <option value="Haircut">Haircut</option>
+              <option value="Haircut-Beard">Haircut + Beard</option>
+              <option value="Beard-Trim">Beard Trim</option>
+              <option value="kids-Haircut">Kids Haircut</option>
+              <option value="Scalp-Massage">Scalp Massage</option>
+              <option value="Hair-Coloring">Hair Coloring</option>
+              <option value="Hot-Towel-Shave">Hot Towel Shave</option>
+              <option value="Hairwash &amp; Blow">Hairwash &amp; Blow</option>
+            </select>
+          </div>
+
+          <div class="flex min-w-0 flex-col gap-1.5">
+            <label for="barber" class="text-[0.8rem] font-semibold text-[#3a3a3c]">Choose Barber</label>
+            <select id="barber" name="barber" required class="w-full rounded-lg border border-[#d2d2d7] bg-white px-3.5 py-3 text-[0.88rem] text-[#1d1d1f] outline-none transition focus:border-[#b8a060] focus:ring-2 focus:ring-[#b8a060]/20">
+              <option value="" selected disabled>Choose barber</option>
+              <option value="free">Available Barber</option>
+              <option value="barber-1">Barber 1</option>
+              <option value="barber-2">Barber 2</option>
+            </select>
+          </div>
+
+          <div class="flex min-w-0 flex-col gap-1.5">
+            <label for="date" class="text-[0.8rem] font-semibold text-[#3a3a3c]">Reservation Date</label>
+            <input type="date" id="date" name="date" required class="w-full rounded-lg border border-[#d2d2d7] bg-white px-3.5 py-3 text-[0.88rem] text-[#1d1d1f] outline-none transition focus:border-[#b8a060] focus:ring-2 focus:ring-[#b8a060]/20" />
+          </div>
+
+          <div class="flex min-w-0 flex-col gap-1.5">
+            <label for="time" class="text-[0.8rem] font-semibold text-[#3a3a3c]">Time Reservation</label>
+            <input type="time" id="time" name="time" min="09:00" max="21:00" required class="w-full rounded-lg border border-[#d2d2d7] bg-white px-3.5 py-3 text-[0.88rem] text-[#1d1d1f] outline-none transition focus:border-[#b8a060] focus:ring-2 focus:ring-[#b8a060]/20" />
+          </div>
         </div>
 
-        <div class="form-field">
-          <label for="telepon">telephone number</label>
-          <input type="tel" id="telepon" name="telepon" placeholder="08xxxxxxxxxx" required />
+        <div class="mt-4 flex flex-col gap-1.5">
+          <label for="Note" class="text-[0.8rem] font-semibold text-[#3a3a3c]">Note for the Barber</label>
+          <textarea id="Note" name="Note" rows="4" placeholder="Example: What hairstyle do you want?..." class="w-full resize-y rounded-lg border border-[#d2d2d7] bg-white px-3.5 py-3 text-[0.88rem] text-[#1d1d1f] outline-none transition placeholder:text-[#aeaeb2] focus:border-[#b8a060] focus:ring-2 focus:ring-[#b8a060]/20"></textarea>
         </div>
 
-        <div class="form-field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Examples@email.com" required />
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <button type="submit" class="rounded-lg bg-[#0a0a0a] px-5 py-3 text-[0.82rem] font-semibold text-white transition hover:bg-[#292929] focus:outline-none focus:ring-2 focus:ring-[#b8a060] focus:ring-offset-2">Make a reservation</button>
+          <button type="reset" class="rounded-lg border border-[#d2d2d7] bg-white px-5 py-3 text-[0.82rem] font-semibold text-[#3a3a3c] transition hover:bg-[#f5f5f7] focus:outline-none focus:ring-2 focus:ring-[#b8a060] focus:ring-offset-2">Reset</button>
         </div>
+      </form>
+    </section>
 
-        <div class="form-field">
-          <label for="Services">choose service</label>
-          <select id="Services" name="Services" required>
-            <option value="" selected disabled>Choose service</option>
-            <option value="Haircut">Haircut</option>
-            <option value="Haircut-Beard">Haircut + Beard</option>
-            <option value="Beard-Trim">Beard Trim</option>
-            <option value="kids-Haircut">Kids Haircut</option>
-            <option value="Scalp-Massage">Scalp Massage</option>
-            <option value="Hair-Coloring">Hair Coloring</option>
-            <option value="Hot-Towel-Shave">Hot Towel Shave</option>
-            <option value="Hairwash & Blow">Hairwash & Blow</option>
-          </select>
-        </div>
-
-        <div class="form-field">
-          <label for="barber">choose barber</label>
-          <select id="barber" name="barber" required>
-            <option value="" selected disabled>Choose barber</option>
-            <option value="free">Available Barber</option>
-            <option value="barber-1">Barber 1</option>
-            <option value="barber-2">Barber 2</option>
-          </select>
-        </div>
-
-        <div class="form-field">
-          <label for="date">Reservation Date</label>
-          <input type="date" id="date" name="date" required />
-        </div>
-
-        <div class="form-field">
-          <label for="time">Time Reservation</label>
-          <input type="time" id="time" name="time" min="09:00" max="21:00" required />
-        </div>
+    <section class="mt-14 max-sm:mt-10">
+      <p class="mb-1 text-[0.68rem] font-bold uppercase tracking-[0.25em] text-[#b8a060]">The people behind WeBarber</p>
+      <h3 class="mb-6 border-b border-[#d2d2d7] pb-4 text-[1.55rem] font-extrabold tracking-[-0.5px] text-[#0a0a0a]">Owner &amp; Founder</h3>
+      <div class="table-scroll overflow-hidden rounded-2xl border border-[#d2d2d7] bg-white shadow-[0_2px_8px_rgba(0,0,0,0.05)]">
+        <table class="w-full border-collapse text-left text-[0.86rem]">
+          <thead class="bg-[#0a0a0a] text-[0.7rem] uppercase tracking-[0.1em] text-white/70">
+            <tr>
+              <th scope="col" class="px-5 py-3 font-bold">No</th>
+              <th scope="col" class="px-5 py-3 font-bold">Name</th>
+              <th scope="col" class="px-5 py-3 font-bold">Position</th>
+              <th scope="col" class="px-5 py-3 font-bold">Contact</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e8e8ed]">
+            <tr class="transition-colors hover:bg-[#f5f5f7]">
+              <td class="px-5 py-4 text-[#6e6e73]">1</td>
+              <td class="px-5 py-4 font-semibold text-[#0a0a0a]">Evan</td>
+              <td class="px-5 py-4 text-[#3a3a3c]">Founder &amp; Head Barber</td>
+              <td class="px-5 py-4 text-[#3a3a3c]">evangalangwry11@email.com</td>
+            </tr>
+            <tr class="transition-colors hover:bg-[#f5f5f7]">
+              <td class="px-5 py-4 text-[#6e6e73]">2</td>
+              <td class="px-5 py-4 font-semibold text-[#0a0a0a]">Fairus</td>
+              <td class="px-5 py-4 text-[#3a3a3c]">Co-Founder &amp; Operations Manager</td>
+              <td class="px-5 py-4 text-[#3a3a3c]">fairuzrasidin33@email.com</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+    </section>
 
-      <div class="form-field">
-        <label for="Note">Note for the Barber</label>
-        <textarea id="Note" name="Note" rows="4" placeholder="Example: What hairstyle do you want?..."></textarea>
+    <section class="mt-14 max-sm:mt-10">
+      <p class="mb-1 text-[0.68rem] font-bold uppercase tracking-[0.25em] text-[#b8a060]">Our story</p>
+      <h3 class="mb-6 border-b border-[#d2d2d7] pb-4 text-[1.55rem] font-extrabold tracking-[-0.5px] text-[#0a0a0a]">About Us</h3>
+      <div class="flex flex-col gap-4 text-[0.9rem] leading-relaxed text-[#3a3a3c]">
+        <p><strong class="font-semibold text-[#0a0a0a]">WeBarber</strong> is the ultimate destination to reclaim your confidence when other barbers have missed the mark. We deliver a top-tier grooming experience that is precise, comfortable, and built on a foundation of trust with every client.</p>
+        <p>Backed by experienced barbers, strictly hygienic tools, and personalized style consultations before every cut, we help you achieve a flawless look tailored to your unique character and lifestyle.</p>
+        <p>Whether you want a classic look or modern looking, we offer <strong class="font-semibold text-[#0a0a0a]">a full range of premium grooming services—all</strong> provided in a relaxed yet professional environment.</p>
       </div>
-
-      <input type="submit" value="Make a reservation" />
-      <input type="reset" value="Reset" />
-
-    </form>
-
-    <hr />
-
-    <h3>Owner &amp; Founder</h3>
-    <table border="1" cellpadding="8" cellspacing="0">
-      <thead>
-        <tr>
-          <th>No</th>
-          <th>Name</th>
-          <th>Position</th>
-          <th>Contact</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Evan</td>
-          <td>Founder &amp; Head Barber</td>
-          <td>evangalangwry11@email.com</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Fairus</td>
-          <td>Co-Founder &amp; Operations Manager</td>
-          <td>fairuzrasidin33@email.com</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <hr />
-
-    <h3>About Us</h3>
-    <div class="about-us">
-      <p><strong>WeBarber</strong> is the ultimate destination to reclaim your confidence when other barbers have missed the mark. We deliver a top-tier grooming experience that is precise, comfortable, and built on a foundation of trust with every client.</p>
-      <p>Backed by experienced barbers, strictly hygienic tools, and personalized style consultations before every cut, we help you achieve a flawless look tailored to your unique character and lifestyle.</p>
-      <p> Whether you want a classic look or modern looking, we offer <strong>a full range of premium grooming services—all</strong> provided in a relaxed yet professional environment. </p>
-    </div>
+    </section>
 
   </main>
 
-  <hr />
-   <footer>
+  <footer class="border-t border-[#d2d2d7] bg-white px-4 py-6 text-center text-[0.78rem] tracking-[0.03em] text-[#aeaeb2]">
     <p>&copy; WeBarber</p>
   </footer>
 
